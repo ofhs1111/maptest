@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>다음 지도 API</title>
+</head>
+<body>
+	<div id="map" style="width:750px;height:350px;"></div>
+
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	dd5695f9711c55fb6ce11f1b4b778367"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(37.56673, 126.98001), // 지도의 중심좌표
+		        level: 3, // 지도의 확대 레벨
+		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+		// 로드뷰 타일 이미지 추가
+		map.addOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW); 
+
+	</script>
+</body>
+</html>
